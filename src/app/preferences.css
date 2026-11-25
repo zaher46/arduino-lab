@@ -1,0 +1,101 @@
+/* Load after globals.css. Theme colors never invert photographs or wiring diagrams. */
+html { color-scheme: dark; }
+html[data-theme='light'] {
+  color-scheme: light;
+  --background: #f3f6f8; --foreground: #172a3b;
+  --card: #ffffff; --card-foreground: #172a3b;
+  --popover: #ffffff; --popover-foreground: #172a3b;
+  --primary: #087965; --primary-foreground: #ffffff;
+  --secondary: #e3ebf0; --secondary-foreground: #20384c;
+  --muted: #e7edf2; --muted-foreground: #516479;
+  --accent: #926126; --accent-foreground: #ffffff;
+  --border: #cdd9e2; --input: #bccbd6; --ring: #087965;
+  --brand-cyan: #087985; --brand-violet: #7152b3; --brand-amber: #93600d;
+  --brand-emerald: #187b50; --brand-rose: #c03659;
+  --sidebar: #ffffff; --sidebar-foreground: #172a3b; --sidebar-border: #cdd9e2;
+}
+html[data-theme='light'] body { background: #f3f6f8; color: #172a3b; background-image: radial-gradient(ellipse at 95% 5%, #deefeb70, transparent 48%); }
+html[data-theme='light'] .text-muted-foreground { color: #516479; }
+html[data-theme='light'] .glass, html[data-theme='light'] .glass-strong { background: #ffffffed !important; border-color: #ccd9e4 !important; box-shadow: 0 12px 35px #233d5210 !important; }
+html[data-theme='light'] .premium-header { background: #f7fafbf2; border-color: #d5e0e8; }
+html[data-theme='light'] .premium-brand strong { color: #172a3b; }
+html[data-theme='light'] .premium-brand b, html[data-theme='light'] .hero-editorial h1>span { color: #087965; }
+html[data-theme='light'] .premium-brand small, html[data-theme='light'] .hero-proof, html[data-theme='light'] .eyebrow-en { color: #516479; }
+html[data-theme='light'] .desktop-nav button, html[data-theme='light'] .mobile-navigation button { color: #516479; }
+html[data-theme='light'] .desktop-nav button[aria-current], html[data-theme='light'] .desktop-nav button:hover, html[data-theme='light'] .mobile-navigation button[aria-current] { color: #087965; }
+html[data-theme='light'] .teacher-nav, html[data-theme='light'] .mobile-menu-button { color: #294257; background: #ffffff; border-color: #cbd8e2; }
+html[data-theme='light'] .hero-editorial>p, html[data-theme='light'] .section-heading p, html[data-theme='light'] .course-description>p, html[data-theme='light'] .workspace-links p, html[data-theme='light'] .workspace-links small { color: #516479; }
+html[data-theme='light'] .eyebrow { color: #8b5c24; }
+html[data-theme='light'] .lab-secondary { color: #233e52; border-color: #bdccd6; background: #ffffff; }
+html[data-theme='light'] .lab-primary { background: #087965; color: #ffffff; }
+html[data-theme='light'] .hero-atelier { background: linear-gradient(155deg,#e5f0ef,#d7e4e9); border-color: #bbd0d8; box-shadow: 0 24px 65px #24415418; }
+html[data-theme='light'] .atelier-top, html[data-theme='light'] .atelier-caption { color: #38586a; border-color: #b9cdd7; }
+html[data-theme='light'] .metrics-strip, html[data-theme='light'] .metric, html[data-theme='light'] .course-footer, html[data-theme='light'] .section-counter { border-color: #cfdae3; }
+html[data-theme='light'] .metric strong, html[data-theme='light'] .section-heading h2, html[data-theme='light'] .course-description h3 { color: #172a3b; }
+html[data-theme='light'] .metric span, html[data-theme='light'] .course-meta, html[data-theme='light'] .course-index, html[data-theme='light'] .section-counter { color: #516479; }
+html[data-theme='light'] .premium-course-card, html[data-theme='light'] .course-card, html[data-theme='light'] .component-tile, html[data-theme='light'] .workspace-links>button { background: #ffffff; border-color: #ccd9e3; }
+html[data-theme='light'] .course-visual { background: linear-gradient(135deg,#e8f1f4,#f4f8f9); }
+html[data-theme='light'] .component-tile span { color: #385166; }
+html[data-theme='light'] .course-search { background: #ffffff; border-color: #c3d1dc; color: #294257; }
+html[data-theme='light'] .course-search input { color: #172a3b; }
+html[data-theme='light'] .phase-tabs button { color: #516479; }
+html[data-theme='light'] .phase-tabs button[aria-pressed='true'] { color: #076c5b; background: #d7ece7; border-color: #9ecabd; }
+html[data-theme='light'] .project-feature { background: linear-gradient(140deg,#e8eee4,#f8efe0); border-color: #d4c3a8; }
+html[data-theme='light'] .project-feature h2 { color: #2b3a31; }
+html[data-theme='light'] .project-feature p { color: #536454; }
+html[data-theme='light'] .premium-footer { background: #e8eff3; border-color: #cbd8e2; }
+html[data-theme='light'] .footer-top>p, html[data-theme='light'] .footer-tags span, html[data-theme='light'] .footer-bottom { color: #4e6577; border-color: #c5d3dd; }
+html[data-theme='light'] .text-gradient-cyan-violet { background: linear-gradient(120deg,#075f62,#087965) !important; background-clip: text !important; -webkit-background-clip: text !important; }
+/* Inline brand colors in the existing educational views need sufficient contrast. */
+html[data-theme='light'] [style*='color: rgb(34, 211, 238)'] { color: #087985 !important; }
+html[data-theme='light'] [style*='color: rgb(52, 211, 153)'] { color: #187b50 !important; }
+html[data-theme='light'] [style*='color: rgb(251, 191, 36)'] { color: #93600d !important; }
+html[data-theme='light'] [style*='color: rgb(168, 85, 247)'] { color: #7152b3 !important; }
+html[data-theme='light'] [style*='color: rgb(124, 141, 181)'] { color: #516479 !important; }
+html[data-theme='light'] [style*='color: rgb(244, 63, 94)'], html[data-theme='light'] [style*='color: rgb(251, 113, 133)'] { color: #b72b4d !important; }
+html[data-theme='light'] [style*='background: rgba(5, 8, 22'], html[data-theme='light'] [style*='background: rgb(5, 8, 22)'] { background: #eef3f7 !important; }
+html[data-theme='light'] input, html[data-theme='light'] textarea, html[data-theme='light'] select { color: #172a3b; background-color: #ffffff; }
+html[data-theme='light'] input::placeholder, html[data-theme='light'] textarea::placeholder { color: #64788b; opacity: 1; }
+html[data-theme='light'] option { background: #ffffff; color: #172a3b; }
+html[data-theme='dark'] option { background: #142031; color: #eef2f4; }
+pre, code, kbd, samp { direction: ltr; unicode-bidi: isolate; text-align: left; }
+pre { overflow-x: auto; }
+html[data-theme='light'] pre { background: #edf2f6 !important; color: #243e51 !important; border-color: #bfcfdb !important; }
+html[data-theme='light'] pre code { color: inherit !important; }
+html[dir='ltr'] .text-right, html[dir='ltr'] .premium-brand, html[dir='ltr'] .workspace-links>button { text-align: left; }
+html[lang='tr'] { font-family: var(--font-cairo), Arial, sans-serif; }
+html[lang='tr'] .hero-editorial h1 { letter-spacing: -1px; font-size: clamp(34px,4.2vw,58px); line-height: 1.3; }
+html[lang='tr'] .desktop-nav { gap: 18px; }
+.preference-controls { display: flex; flex-wrap: wrap; gap: 8px; align-items: center; justify-content: flex-end; color: var(--foreground); }
+.language-control, .theme-control { display: inline-flex; align-items: center; gap: 7px; padding: 7px 10px; min-height: 40px; border: 1px solid var(--input); border-radius: 10px; background: var(--card); color: var(--foreground); font-size: 12px; }
+.language-control select { width: 80px; background: transparent; color: inherit; border: 0; padding: 3px; }
+.theme-control { cursor: pointer; }
+.preference-controls :focus-visible { outline: 2px solid var(--ring); outline-offset: 3px; }
+@media(max-width:760px) { .preference-controls { gap: 6px; } .language-control,.theme-control { min-height: 40px; padding: 6px 8px; } .theme-control span { display: none; } html[lang='tr'] .hero-editorial h1 { font-size: 38px; } }
+@media print { html body { background: #fff !important; color: #111 !important; } .preference-controls { display: none; } }
+html[data-theme='light'] .course-footer>span { color: #35566a; }
+html[data-theme='light'] .workspace-icon { color: #087965; }
+html[data-theme='light'] .workspace-icon.gold, html[data-theme='light'] .brand-symbol { color: #8b5c24; }
+html[data-theme='light'] .workspace-icon.violet { color: #7152b3; }
+html[data-theme='light'] [style*='background-color: rgba(5, 8, 22'], html[data-theme='light'] [style*='background-color: rgb(5, 8, 22)'] { background-color: #eef3f7 !important; }
+html[data-theme='light'] svg foreignObject { color: #172a3b; }
+html[data-theme='light'] svg foreignObject [style*='color: rgb(230, 241, 255)'] { color: #172a3b !important; }
+
+html[lang="tr"] .text-right { text-align: start; }
+html[lang="tr"] .hero-editorial h1 {font-size:clamp(2.6rem,6vw,5rem);}
+html[lang="tr"] .hero-proof {flex-wrap:wrap;}
+.workshop-blocks {list-style:decimal;padding-inline-start:1.6rem;}
+.scope-panel summary,.source-diagrams summary,.algorithm-plan summary {cursor:pointer;font-weight:700;padding-block:.45rem}
+.scope-panel>p, .algorithm-plan>p,.algorithm-plan details p {margin-block:.75rem}
+.scope-panel small {display:block;color:var(--muted-foreground)}
+.dashboard-metrics {margin-block:1.5rem}
+.dashboard-metrics svg {color:var(--brand-emerald)}
+.classroom-workspace {min-height:70vh;}
+.classroom-workspace .scope-table table {min-width:35rem;}
+.classroom-workspace .scope-table {overflow-x:auto;max-width:100%}
+.classroom-workspace .scope-table td,.classroom-workspace .scope-table th {text-align:start}
+.scope-panel,.scope-fields label,.course-search,.hero-editorial {min-width:0}
+.scope-tabs button:focus-visible,summary:focus-visible,select:focus-visible {outline:3px solid var(--ring);outline-offset:3px}
+html[data-theme="light"] .hero-editorial h1,html[data-theme="light"] .workspace-links h3 {color:#172a3b}
+html[data-theme="light"] .classroom-workspace .scope-button.danger {color:#952d36}
+@media(max-width:740px){.class-scope-panel select{max-width:100%;min-width:0}.dashboard-metrics{grid-template-columns:repeat(auto-fit,minmax(8rem,1fr))}.hero-proof{flex-wrap:wrap}}

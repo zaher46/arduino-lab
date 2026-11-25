@@ -1,0 +1,10 @@
+import {cpSync,existsSync,mkdirSync,rmSync} from 'node:fs';
+import {join} from 'node:path';
+const html='.next/server/app/index.html';
+if(!existsSync(html))throw Error('Missing rendered course home page.');
+rmSync('website',{recursive:true,force:true});
+mkdirSync('website/_next',{recursive:true});
+cpSync(html,join('website','index.html'));
+cpSync('.next/static','website/_next/static',{recursive:true});
+cpSync('public','website',{recursive:true});
+console.log('Course interface ready in website/.');

@@ -1,0 +1,103 @@
+// This is your Prisma schema file
+
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider = "sqlite"
+  url      = env("DATABASE_URL")
+}
+
+model Classroom {
+  id        Int       @id @default(autoincrement())
+  name      String
+  color     String    @default("cyan")
+  notes     String?
+  createdAt DateTime  @default(now())
+  updatedAt DateTime  @updatedAt
+  students  Student[]
+}
+
+model Student {
+  id         Int         @id @default(autoincrement())
+  name       String
+  age        Int?
+  grade      String?
+  phone      String?
+  parentName String?
+  parentPhone String?
+  notes      String?
+  points     Int         @default(0)
+  badges     String      @default("") // comma-separated badge names
+  classroomId Int?
+  createdAt  DateTime    @default(now())
+  updatedAt  DateTime    @updatedAt
+  classroom  Classroom?  @relation(fields: [classroomId], references: [id], onDelete: SetNull)
+  attendances Attendance[]
+  progresses  Progress[]
+  homeworks   HomeworkSubmission[]
+  examResults ExamResult[]
+}
+
+model Attendance {
+  classroomId Int?
+  id        Int      @id @default(autoincrement())
+  studentId Int
+  sessionId Int
+  course    String   @default("arduino")
+  status    String   @default("absent")
+  date      DateTime @default(now())
+  notes     String?
+  student   Student  @relation(fields: [studentId], references: [id], onDelete: Cascade)
+  @@unique([classroomId, studentId, sessionId, course])
+}
+
+model Progress {
+  classroomId Int?
+  id        Int      @id @default(autoincrement())
+  studentId Int
+  sessionId Int
+  course    String   @default("arduino")
+  completed Boolean  @default(false)
+  score     Int?
+  notes     String?
+  student   Student  @relation(fields: [studentId], references: [id], onDelete: Cascade)
+  @@unique([classroomId, studentId, sessionId, course])
+}
+
+model Homework {
+  id          Int      @id @default(autoincrement())
+  title       String
+  description String
+  courseId    String   @default("arduino") // "arduino" or "python"
+  sessionId   Int
+  dueDate     String?
+  createdAt   DateTime @default(now())
+  submissions HomeworkSubmission[]
+}
+
+model HomeworkSubmission {
+  id         Int      @id @default(autoincrement())
+  homeworkId Int
+  studentId  Int
+  status     String   @default("pending") // "pending", "submitted", "graded"
+  content    String?
+  grade      Int?
+  feedback   String?
+  submittedAt DateTime @default(now())
+  homework   Homework @relation(fields: [homeworkId], references: [id], onDelete: Cascade)
+  student    Student  @relation(fields: [studentId], references: [id], onDelete: Cascade)
+  @@unique([homeworkId, studentId])
+}
+
+model ExamResult {
+  id        Int      @id @default(autoincrement())
+  studentId Int
+  course    String   @default("arduino")
+  score     Int
+  totalQuestions Int
+  answers   String   @default("") // JSON of answers
+  date      DateTime @default(now())
+  student   Student  @relation(fields: [studentId], references: [id], onDelete: Cascade)
+}
